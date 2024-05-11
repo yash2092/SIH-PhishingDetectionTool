@@ -1,0 +1,24 @@
+{
+    "name": "SecurePhish",
+    "version": "1.0.0",
+    "description": "Chrome Extension for checking Phishing websites",
+    "manifest_version": 3,
+    "icons": {
+        "64": "phish.png"
+    },
+    "permissions": [
+        "activeTab"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_start"
+        }
+    ]
+}
